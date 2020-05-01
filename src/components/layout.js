@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./Footer"
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -24,28 +25,10 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <div className="wrapper">
-        <main>{children}</main>
-        <footer>
-          <span>dine</span>
-          <address>
-            Marthwaite, Sedbergh
-            <br />
-            Cumbria
-            <br />
-            +00 44 123 4567
-          </address>
-          <div className="hours">
-            Open Times
-            <br />
-            Mon - Fri: 09:00 AM - 10:00 PM
-            <br />
-            Sat - Sun: 09:00 AM - 11:30 PM
-          </div>
-        </footer>
-      </div>
-    </>
+    <div className="layout">
+      <main>{children}</main>
+      <Footer />
+    </div>
   )
 }
 
